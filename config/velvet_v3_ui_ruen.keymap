@@ -26,14 +26,12 @@
 
         cmben {
             bindings = <&layer_en>;
-            key-positions = <15 16 14>;
-            layers = <1>;
+            key-positions = <15 16 14 13>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <19 20 21>;
-            layers = <0>;
+            key-positions = <19 20 21 22>;
         };
     };
 
