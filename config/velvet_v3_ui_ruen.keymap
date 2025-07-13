@@ -28,7 +28,7 @@
             bindings = <&layer_en>;
             key-positions = <15 16>;
             layers = <1>;
-            timeout-ms = <5>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <50>;
         };
 
@@ -36,7 +36,7 @@
             bindings = <&layer_ru>;
             key-positions = <19 20>;
             layers = <0>;
-            timeout-ms = <5>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <50>;
         };
     };
