@@ -35,6 +35,18 @@
             key-positions = <15 16>;
             layers = <0>;
         };
+
+        cmben2 {
+            bindings = <&layer_en>;
+            key-positions = <15 16>;
+            layers = <1>;
+        };
+
+        cmbru2 {
+            bindings = <&layer_ru>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
     };
 
     macros {
