@@ -32,7 +32,7 @@
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <15 16>;
+            key-positions = <19 20>;
             layers = <0>;
         };
 
@@ -44,7 +44,7 @@
 
         cmbru2 {
             bindings = <&layer_ru>;
-            key-positions = <19 20>;
+            key-positions = <15 16>;
             layers = <0>;
         };
     };
