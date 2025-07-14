@@ -28,12 +28,14 @@
             bindings = <&layer_en>;
             key-positions = <38 41>;
             layers = <1>;
+            slow-release;
         };
 
         cmbru {
             bindings = <&layer_ru>;
             key-positions = <38 41>;
             layers = <0>;
+            slow-release;
         };
     };
 
