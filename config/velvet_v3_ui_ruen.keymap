@@ -26,9 +26,10 @@
             bindings = <&kp>, <&layer_ru>;
 
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <20>;
-            hold-trigger-key-positions = <38>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <50>;
+            hold-while-undecided;
         };
 
         ctrl_tap_to_en: ctrl_tap_to_en {
@@ -37,8 +38,9 @@
             bindings = <&kp>, <&layer_en>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
-            hold-trigger-key-positions = <38>;
+            tapping-term-ms = <202>;
+            quick-tap-ms = <50>;
+            hold-while-undecided;
         };
     };
 
@@ -47,14 +49,14 @@
 
         cmben {
             bindings = <&layer_en>;
-            key-positions = <>;
+            key-positions = <12 24>;
             layers = <1>;
             timeout-ms = <500>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <38>;
+            key-positions = <38 24 12>;
             layers = <0>;
             timeout-ms = <500>;
         };
