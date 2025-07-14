@@ -23,7 +23,7 @@
         ctrl_tap_to_ru: ctrl_tap_to_ru {
             compatible = "zmk,behavior-hold-tap";
             label = "CTRL_TAP_TO_RU";
-            bindings = <&kp>, <&to_ru>;
+            bindings = <&kp>, <&layer_ru>;
 
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
@@ -34,7 +34,7 @@
         ctrl_tap_to_en: ctrl_tap_to_en {
             compatible = "zmk,behavior-hold-tap";
             label = "CTRL_TAP_TO_EN";
-            bindings = <&kp>, <&to_en>;
+            bindings = <&kp>, <&layer_en>;
 
             #binding-cells = <2>;
             tapping-term-ms = <30>;
