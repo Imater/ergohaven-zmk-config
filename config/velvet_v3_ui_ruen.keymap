@@ -127,6 +127,14 @@
             bindings = <&none &kp U &kp U &kp LS(S) &kp N4 &kp F &kp O &kp O &kp S &kp UNDER &kp LS(V) &kp LS(E)>;
             label = "PASS";
         };
+
+        shift_and_scroll: shift_and_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LEFT_SHIFT &mo 7>, <&macro_release>;
+
+            label = "SHIFT_AND_SCROLL";
+        };
     };
 
     keymap {
@@ -134,10 +142,10 @@
 
         en {
             bindings = <
-&kp ESC    &kp Q  &kp W     &kp E     &kp R                    &kp T                              &kp Y  &kp U   &kp I      &kp O     &kp P     &mkp MB1
-&kp TAB    &kp A  &kp S     &kp D     &kp F                    &kp G                              &kp H  &kp J   &kp K      &kp L     &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z  &kp X     &kp C     &kp V                    &kp B                              &kp N  &kp M   &kp COMMA  &kp DOT   &kp SQT   &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
-                  &kp LALT  &kp LGUI  &ctrl_tap_to_ru LCTRL 0  &mo 2  &kp BACKSPACE    &kp SPACE  &mo 3  &trans  &kp LBKT   &kp RBKT
+&kp ESC            &kp Q  &kp W     &kp E     &kp R                    &kp T                              &kp Y  &kp U   &kp I      &kp O     &kp P     &mkp MB1
+&kp TAB            &kp A  &kp S     &kp D     &kp F                    &kp G                              &kp H  &kp J   &kp K      &kp L     &kp SEMI  &kp ENTER
+&shift_and_scroll  &kp Z  &kp X     &kp C     &kp V                    &kp B                              &kp N  &kp M   &kp COMMA  &kp DOT   &kp SQT   &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
+                          &kp LALT  &kp LGUI  &ctrl_tap_to_ru LCTRL 0  &mo 2  &kp BACKSPACE    &kp SPACE  &mo 3  &trans  &kp LBKT   &kp RBKT
             >;
 
             display-name = "en";
@@ -146,10 +154,10 @@
         ru {
             display-name = "ru";
             bindings = <
-&kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA       &kp RU_CYRILLIC_IE                           &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &trans
-&kp TAB    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A        &kp RU_CYRILLIC_PE                           &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &trans
-&kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM       &kp RU_CYRILLIC_I                            &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E    &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
-                                    &kp LALT              &kp LGUI            &ctrl_tap_to_en LCTRL 0  &mo 2               &kp BACKSPACE    &trans  &mo 4               &trans                     &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+&kp ESC            &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA       &kp RU_CYRILLIC_IE                           &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &trans
+&kp TAB            &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A        &kp RU_CYRILLIC_PE                           &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &trans
+&shift_and_scroll  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM       &kp RU_CYRILLIC_I                            &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E    &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
+                                            &kp LALT              &kp LGUI            &ctrl_tap_to_en LCTRL 0  &mo 2               &kp BACKSPACE    &trans  &mo 4               &trans                     &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
