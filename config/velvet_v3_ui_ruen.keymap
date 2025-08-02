@@ -102,18 +102,34 @@
     combos {
         compatible = "zmk,combos";
 
-        cmben {
-            bindings = <&layer_en>;
-            key-positions = <12 24>;
-            layers = <1>;
-            timeout-ms = <500>;
+        round_brackets {
+            bindings = <&pair_and_go_inside LPAR RPAR>;
+            key-positions = <14 16>;
+            layers = <3 4>;
         };
 
-        cmbru {
-            bindings = <&layer_ru>;
-            key-positions = <38 24 12>;
-            layers = <0>;
-            timeout-ms = <500>;
+        curly_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACE RIGHT_BRACE>;
+            key-positions = <19 21>;
+            layers = <3 4>;
+        };
+
+        square_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACKET RIGHT_BRACKET>;
+            key-positions = <44 45>;
+            layers = <3 4>;
+        };
+
+        single_quote {
+            bindings = <&pair_and_go_inside SQT SQT>;
+            key-positions = <7 9>;
+            layers = <3 4>;
+        };
+
+        angle_brackets {
+            bindings = <&pair_and_go_inside LESS_THAN GREATER_THAN>;
+            key-positions = <4 2>;
+            layers = <3 4>;
         };
     };
 
@@ -191,6 +207,24 @@
 
             label = "RU";
         };
+
+        pair_and_go_inside: inside_pair {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &kp LEFT>;
+            label = "INSIDE_PAIR";
+        };
+
+        mouse_click_with_shift: mouse_click_with_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kt LEFT_SHIFT &mkp MB1 &kt LEFT_SHIFT>,
+                <&macro_release>;
+
+            label = "MOUSE_CLICK_WITH_SHIFT";
+        };
     };
 
     keymap {
@@ -201,7 +235,7 @@
 &kp ESC         &kp Q  &kp W     &kp E     &kp R      &kp T                                       &kp Y            &kp U  &kp I      &kp O     &kp P     &mkp MB1
 &kp TAB         &kp A  &kp S     &kp D     &kp F      &kp G                                       &kp H            &kp J  &kp K      &kp L     &kp SEMI  &kp ENTER
 &sk LEFT_SHIFT  &kp Z  &kp X     &kp C     &kp V      &kp B                                       &kp N            &kp M  &kp COMMA  &kp DOT   &kp SQT   &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
-                       &sk LALT  &sk LGUI  &sk LCTRL  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &none  &kp LBKT   &kp RBKT
+                       &sk LALT  &sk LGUI  &kp LCTRL  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &mo 9  &kp LBKT   &kp RBKT
             >;
 
             display-name = "Base";
@@ -213,7 +247,7 @@
 &kp ESC         &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                           &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &trans
 &kp TAB         &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                           &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &trans
 &sk LEFT_SHIFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                            &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E    &right_shift_to_scroll_by_tap RIGHT_SHIFT 7
-                                         &sk LALT              &sk LGUI            &sk LCTRL           &red_mo_ru 2 0      &kp BACKSPACE    &trans  &blue_mo_en 4 0     &trans                     &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+                                         &sk LALT              &sk LGUI            &kp LCTRL           &red_mo_ru 2 0      &kp BACKSPACE    &trans  &blue_mo_en 4 0     &trans                     &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
@@ -221,7 +255,7 @@
             bindings = <
 &trans  &kp N1    &kp N2    &kp N3   &kp N4    &kp N5                     &kp N6          &kp N7         &kp N8       &kp N9           &kp N0       &trans
 &trans  &mkp MB3  &mkp MB2  &mo 7    &mkp MB1  &kp RET                    &kp LEFT_ARROW  &kp DOWN       &kp UP       &kp RIGHT_ARROW  &kp END      &trans
-&trans  &trans    &kp HOME  &kp INS  &kp END   &kp DEL                    &kp CLCK        &kp PAGE_DOWN  &kp PAGE_UP  &kp LC(RIGHT)    &kp LC(END)  &trans
+&trans  &trans    &kp HOME  &kp INS  &kp END   &kp DEL                    &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP  &kp END          &kp LC(END)  &trans
                   &trans    &trans   &trans    &trans   &trans    &trans  &mo 5           &trans         &trans       &trans
             >;
 
@@ -262,10 +296,10 @@
 
         mouse {
             bindings = <
-&trans  &trans    &trans    &trans  &trans    &trans                    &trans  &trans    &trans  &trans    &trans    &trans
-&trans  &mkp MB3  &mkp MB2  &mo 7   &mkp MB1  &mo 8                     &mo 8   &mkp MB1  &mo 7   &mkp MB2  &mkp MB3  &trans
-&trans  &trans    &trans    &trans  &trans    &trans                    &trans  &trans    &trans  &trans    &trans    &trans
-                  &trans    &trans  &trans    &trans  &trans    &trans  &trans  &trans    &trans  &trans
+&trans  &trans    &trans    &trans  &trans                   &trans                    &trans  &trans    &trans  &trans    &trans    &trans
+&trans  &mkp MB3  &mkp MB2  &mo 7   &mkp MB1                 &mo 8                     &mo 8   &mkp MB1  &mo 7   &mkp MB2  &mkp MB3  &trans
+&trans  &trans    &trans    &trans  &mouse_click_with_shift  &trans                    &trans  &trans    &trans  &trans    &trans    &trans
+                  &trans    &trans  &trans                   &trans  &trans    &trans  &trans  &trans    &trans  &trans
             >;
 
             display-name = "Mouse";
@@ -291,6 +325,15 @@
             >;
 
             display-name = "Sniper";
+        };
+
+        app {
+            bindings = <
+&trans  &trans  &trans  &trans      &kp LG(N3)  &kp LG(NUMBER_4)                    &kp LG(N8)        &trans            &trans          &trans         &kp LG(N7)  &trans
+&trans  &trans  &trans  &trans      &trans      &trans                              &kp LG(LEFT)      &kp LS(LG(DOWN))  &kp LS(LG(UP))  &kp LG(RIGHT)  &trans      &trans
+&trans  &trans  &trans  &kp LG(N2)  &kp LG(N9)  &kp LG(N1)                          &kp LG(NUMBER_6)  &kp LG(N5)        &trans          &trans         &trans      &trans
+                &trans  &trans      &trans      &trans            &trans    &trans  &trans            &trans            &trans          &trans
+            >;
         };
     };
 };
