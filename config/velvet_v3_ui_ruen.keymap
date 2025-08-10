@@ -355,8 +355,7 @@
     };
 
     sniper {
-        layers = <7>;
+        layers = <8>;
         input-processors = <&zip_xy_scaler 1 4>;
-        require-pressed = <&mkp LMB>;
     };
 };
