@@ -354,8 +354,13 @@
             <&zip_xy_to_scroll_mapper>;
     };
 
-    sniper {
+    sniper2 {
         layers = <2>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
+
+    sniper9 {
+        layers = <9>;
         input-processors = <&zip_xy_scaler 1 4>;
     };
 };
