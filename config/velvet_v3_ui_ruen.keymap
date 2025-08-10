@@ -218,11 +218,13 @@
         mouse_click_with_shift: mouse_click_with_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LEFT_SHIFT>,  // Нажимаем Shift
-                <&macro_tap &mkp MB1>,         // Делаем клик мыши (нажатие и отпускание)
-                <&macro_release &kp LEFT_SHIFT> // Отпускаем Shift
-            >;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&mkp MB1>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
         };
     };
 
@@ -296,7 +298,7 @@
         mouse {
             bindings = <
 &trans  &trans    &trans    &trans  &trans                   &trans                    &trans  &trans    &trans  &trans    &trans    &trans
-&trans  &mkp MB3  &mkp MB2  &mo 7   &mkp MB1                 &mo 8                     &mo 8   &mkp MB1  &mo 7   &mkp MB2  &mkp MB3  &trans
+&trans  &mkp MB3  &mkp MB2  &mo 7   &mkp MB1                 &trans                    &mo 8   &mkp MB1  &mo 7   &mkp MB2  &mkp MB3  &trans
 &trans  &trans    &trans    &trans  &mouse_click_with_shift  &trans                    &trans  &trans    &trans  &trans    &trans    &trans
                   &trans    &trans  &trans                   &trans  &trans    &trans  &trans  &trans    &trans  &trans
             >;
