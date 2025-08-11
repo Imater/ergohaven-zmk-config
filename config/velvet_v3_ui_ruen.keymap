@@ -354,11 +354,11 @@
 
     sniper2 {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 1 4>;
+        input-processors = <&zip_xy_scaler 1 8>;
     };
 
     sniper9 {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 4>;
+        input-processors = <&zip_xy_scaler 1 8>;
     };
 };
