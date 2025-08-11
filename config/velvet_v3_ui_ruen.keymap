@@ -308,10 +308,10 @@
 
         scroll {
             bindings = <
-&trans  &trans  &trans  &trans      &kp LG(N3)  &kp LG(N4)                    &kp LG(N8)  &trans      &trans    &trans  &kp LG(N7)  &trans
-&trans  &trans  &trans  &mkp MB2    &mkp MB1    &trans                        &trans      &mkp MB1    &mkp MB2  &trans  &trans      &trans
-&trans  &trans  &trans  &kp LG(N2)  &kp LG(N9)  &kp LG(N1)                    &kp LG(N6)  &kp LG(N5)  &trans    &trans  &trans      &trans
-                &trans  &trans      &trans      &trans      &trans    &trans  &trans      &trans      &trans    &trans
+&trans  &trans  &trans  &trans      &kp LG(N3)  &kp LG(N4)                    &kp LG(N8)     &trans      &trans    &trans      &kp LG(N7)  &trans
+&trans  &trans  &trans  &mkp MB2    &mkp MB1    &trans                        &kp BACKSPACE  &mkp MB1    &mkp MB2  &kp DELETE  &trans      &trans
+&trans  &trans  &trans  &kp LG(N2)  &kp LG(N9)  &kp LG(N1)                    &kp LG(N6)     &kp LG(N5)  &trans    &trans      &trans      &trans
+                &trans  &trans      &trans      &trans      &trans    &trans  &trans         &trans      &trans    &trans
             >;
 
             display-name = "Scroll";
