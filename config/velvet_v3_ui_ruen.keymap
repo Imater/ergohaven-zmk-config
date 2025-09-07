@@ -225,7 +225,7 @@
                 <&mkp MB1>,
                 <&macro_release>,
                 <&kp LEFT_SHIFT>,
-                <&macro_wait_time 50>,
+                <&macro_press>,
                 <&kp LC(C)>;
         };
     };
@@ -235,10 +235,10 @@
 
         en {
             bindings = <
-&kp ESC         &kp Q  &kp W     &kp E         &kp R      &kp T                                       &kp Y            &kp U   &kp I      &kp O     &kp P       &sl 9
-&kp TAB         &kp A  &lt 7 S   &kp D         &kp F      &kp G                                       &kp H            &kp J   &kp K      &kp L     &lt 7 SEMI  &kp ENTER
-&sk LEFT_SHIFT  &kp Z  &kp X     &kp C         &kp V      &kp B                                       &kp N            &kp M   &kp COMMA  &kp DOT   &kp SQT     &sk RIGHT_SHIFT
-                       &sk LALT  &sk LEFT_WIN  &kp LCTRL  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &trans  &kp LBKT   &kp RBKT
+&kp ESC         &kp Q  &kp W     &kp E         &kp R      &kp T                                       &kp Y            &kp U  &kp I      &kp O     &kp P       &sl 9
+&kp TAB         &kp A  &lt 7 S   &kp D         &kp F      &kp G                                       &kp H            &kp J  &kp K      &kp L     &lt 7 SEMI  &kp ENTER
+&sk LEFT_SHIFT  &kp Z  &kp X     &kp C         &kp V      &kp B                                       &kp N            &kp M  &kp COMMA  &kp DOT   &kp SQT     &sk RIGHT_SHIFT
+                       &sk LALT  &sk LEFT_WIN  &kp LCTRL  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &mo 6  &kp LBKT   &kp RBKT
             >;
 
             display-name = "Base";
