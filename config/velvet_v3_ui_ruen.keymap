@@ -72,8 +72,8 @@
 
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <300>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <100>;
             hold-while-undecided;
         };
 
@@ -84,8 +84,8 @@
 
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <300>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <100>;
             hold-while-undecided;
         };
 
@@ -235,10 +235,10 @@
 
         en {
             bindings = <
-&kp ESC         &kp Q  &kp W     &kp E         &kp R      &kp T                                       &kp Y            &kp U  &kp I      &kp O     &kp P       &sl 9
-&kp TAB         &kp A  &lt 7 S   &kp D         &kp F      &kp G                                       &kp H            &kp J  &kp K      &kp L     &lt 7 SEMI  &kp ENTER
-&sk LEFT_SHIFT  &kp Z  &kp X     &kp C         &kp V      &kp B                                       &kp N            &kp M  &kp COMMA  &kp DOT   &kp SQT     &sk RIGHT_SHIFT
-                       &sk LALT  &sk LEFT_WIN  &kp LCTRL  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &mo 6  &kp LBKT   &kp RBKT
+&kp ESC         &kp Q  &kp W     &kp E      &kp R     &kp T                                       &kp Y            &kp U  &kp I      &kp O     &kp P       &sl 9
+&kp TAB         &kp A  &kp S     &kp D      &lt 7 F   &kp G                                       &kp H            &kp J  &kp K      &kp L     &lt 7 SEMI  &kp ENTER
+&sk LEFT_SHIFT  &kp Z  &kp X     &kp C      &kp V     &kp B                                       &kp N            &kp M  &kp COMMA  &kp DOT   &kp SQT     &sk RIGHT_SHIFT
+                       &sk LALT  &sk LCTRL  &sk LCMD  &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &mo 6  &kp LBKT   &kp RBKT
             >;
 
             display-name = "Base";
@@ -247,10 +247,10 @@
         ru {
             display-name = "Ru";
             bindings = <
-&kp ESC         &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE     &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                           &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE     &trans
-&kp TAB         &kp RU_CYRILLIC_EF       &lt 7 RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                           &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &lt 7 RU_CYRILLIC_ZHE  &trans
-&sk LEFT_SHIFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE     &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                            &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E      &kp RIGHT_SHIFT
-                                         &sk LALT                &sk LEFT_WIN        &kp LCTRL           &red_mo_ru 2 0      &kp BACKSPACE    &trans  &blue_mo_en 4 0     &trans                     &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+&kp ESC         &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA   &kp RU_CYRILLIC_IE                           &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE     &trans
+&kp TAB         &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &lt 7 RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                           &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &lt 7 RU_CYRILLIC_ZHE  &trans
+&sk LEFT_SHIFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM   &kp RU_CYRILLIC_I                            &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E      &kp RIGHT_SHIFT
+                                         &sk LALT              &sk LEFT_WIN        &kp LCTRL            &red_mo_ru 2 0      &kp BACKSPACE    &trans  &blue_mo_en 4 0     &mo 6                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
@@ -310,10 +310,10 @@
 
         scroll {
             bindings = <
-&trans  &trans  &trans  &trans      &kp LG(N3)  &kp LG(N4)                    &kp LG(N8)     &trans      &trans    &trans      &kp LG(N7)  &trans
-&trans  &trans  &trans  &mkp MB2    &mkp MB1    &trans                        &kp BACKSPACE  &mkp MB1    &mkp MB2  &kp DELETE  &trans      &trans
-&trans  &trans  &trans  &kp LG(N2)  &kp LG(N9)  &kp LG(N1)                    &kp LG(N6)     &kp LG(N5)  &trans    &trans      &trans      &trans
-                &trans  &trans      &trans      &trans      &trans    &trans  &trans         &trans      &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans            &trans    &trans    &trans             &kp LA(LG(NUMBER_5))  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LG(LA(LEFT))  &mkp MB1  &mkp MB2  &kp LA(LG(RIGHT))  &trans                &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LG(LA(F))     &trans    &trans    &trans             &trans                &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans    &trans
             >;
 
             display-name = "Scroll";
