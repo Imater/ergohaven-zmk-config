@@ -1,8 +1,12 @@
 #include "keys_ru.h"
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     behaviors {
@@ -11,6 +15,94 @@
             label = "ENC_VOL";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+        };
+
+        cap_sen: cap_sen {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAP_SEN";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            hold-while-undecided;
+        };
+
+        ctrl_tap_to_ru: ctrl_tap_to_ru {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_TAP_TO_RU";
+            bindings = <&kp>, <&layer_ru>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <300>;
+            hold-while-undecided;
+        };
+
+        ctrl_tap_to_en: ctrl_tap_to_en {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_TAP_TO_EN";
+            bindings = <&kp>, <&layer_en>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <299>;
+            hold-while-undecided;
+        };
+
+        right_shift_to_scroll_by_tap: right_shift_to_scroll_by_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_SHIFT_TO_SCROLL_BY_TAP";
+            bindings = <&kp>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <100>;
+            hold-while-undecided;
+        };
+
+        mo_sk_and_layer: mo_sk_and_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_SK_AND_LAYER";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <100>;
+            hold-while-undecided;
+        };
+
+        red_mo_ru: red_mo_ru {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RED_MO_RU";
+            bindings = <&mo>, <&layer_ru>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            hold-while-undecided;
+        };
+
+        blue_mo_en: blue_mo_en {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BLUE_MO_EN";
+            bindings = <&mo>, <&layer_en>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            hold-while-undecided;
+        };
+
+        dblClick: dblClick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DBLCLICK";
+            #binding-cells = <0>;
+            bindings = <&none>, <&none>, <&tog 7>;
+
+            tapping-term-ms = <200>;
         };
     };
 
@@ -27,6 +119,36 @@
             bindings = <&layer_ru>;
             key-positions = <15 16>;
             layers = <0>;
+        };
+
+        round_brackets {
+            bindings = <&pair_and_go_inside LPAR RPAR>;
+            key-positions = <14 16>;
+            layers = <3 4>;
+        };
+
+        curly_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACE RIGHT_BRACE>;
+            key-positions = <19 21>;
+            layers = <3 4>;
+        };
+
+        square_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACKET RIGHT_BRACKET>;
+            key-positions = <44 45>;
+            layers = <3 4>;
+        };
+
+        single_quote {
+            bindings = <&pair_and_go_inside SQT SQT>;
+            key-positions = <7 9>;
+            layers = <3 4>;
+        };
+
+        angle_brackets {
+            bindings = <&pair_and_go_inside LESS_THAN GREATER_THAN>;
+            key-positions = <4 2>;
+            layers = <3 4>;
         };
     };
 
@@ -83,6 +205,61 @@
             label = "EN";
             wait-ms = <0>;
             tap-ms = <30>;
+        };
+
+        dash: dash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "DASH";
+        };
+
+        pass: pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to_en &kp U &kp U &kp LS(S) &kp N4 &kp F &kp O &kp O &kp S &kp UNDER &kp LS(V) &kp LS(E)>;
+            label = "PASS";
+        };
+
+        shift_and_scroll: shift_and_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LEFT_SHIFT &mo 7>, <&macro_release>;
+
+            label = "SHIFT_AND_SCROLL";
+        };
+
+        ru: ru {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&to_ru &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_wait_time 10>,
+                <&to_en>,
+                <&macro_wait_time 10>;
+
+            label = "RU";
+        };
+
+        pair_and_go_inside: inside_pair {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &kp LEFT>;
+            label = "INSIDE_PAIR";
+        };
+
+        mouse_click_with_shift: mouse_click_with_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&mkp MB1>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_press>,
+                <&kp LC(C)>;
         };
     };
 
