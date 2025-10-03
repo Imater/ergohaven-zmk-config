@@ -12,6 +12,28 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        redMoRu: redMoRu {
+            compatible = "zmk,behavior-hold-tap";
+            label = "REDMORU";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-while-undecided;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
+        blueMoEn: blueMoEn {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BLUEMOEN";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-while-undecided;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
     };
 
     keymap {
@@ -70,24 +92,6 @@
             >;
 
             display-name = "Adjust";
-        };
-
-        encoder {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp PAGE_DOWN PAGE_UP>,
-                <&inc_dec_kp LA(TAB) RS(LA(TAB))>,
-                <&inc_dec_kp 0 0>,
-                <&inc_dec_kp 0 0>,
-                <&inc_dec_kp 0 0>,
-                <&inc_dec_kp 0 0>;
         };
     };
 };
