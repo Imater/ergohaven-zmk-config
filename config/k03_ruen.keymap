@@ -104,7 +104,7 @@
                 <&inc_dec_kp UP DOWN>,
                 <&inc_dec_kp LEFT RIGHT>,
                 <&enc_vol>,
-                <&enc_vol>,
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
                 <&enc_vol>;
         };
 
