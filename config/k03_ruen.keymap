@@ -52,7 +52,7 @@
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <15 16>;
+            key-positions = <19 20>;
             layers = <0>;
         };
 
@@ -84,6 +84,11 @@
         ctrl+backspace {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <54 53>;
+        };
+
+        comma {
+            bindings = <&kp COMMA>;
+            key-positions = <52 56>;
         };
     };
 
@@ -155,11 +160,11 @@
 
         en {
             bindings = <
-&kp UNDER  &kp PLUS  &kp SEMI  &kp GRAVE  &kp COLON       &kp EQUAL                                 &kp ASTRK  &kp EXCL   &kp QMARK  &kp HASH  &kp SLASH  &kp LG(BSPC)
-&kp DQT    &kp Q     &kp W     &kp E      &kp R           &kp T                                     &kp Y      &kp U      &kp I      &kp O     &kp P      &trans
-&kp ESC    &kp A     &kp S     &kp D      &kp F           &kp G                                     &kp H      &kp J      &kp K      &kp L     &kp SEMI   &kp AT_SIGN
-&kp SQT    &kp Z     &kp X     &kp C      &kp V           &kp B          &sk LCMD     &sk LEFT_ALT  &kp N      &kp M      &kp COMMA  &kp DOT   &kp MINUS  &kp RU_NUMERO
-                     &mo 5     &sk LCTRL  &sk LEFT_SHIFT  &kp BACKSPACE  &kp ENTER    &layer_ru     &kp DOT    &kp SPACE  &to 6      &to 3
+&kp HASH  &kp PLUS  &kp SEMI  &kp GRAVE     &kp COLON       &kp EQUAL                              &kp ASTRK  &kp EXCL   &kp QMARK  &kp UNDER  &kp FSLH   &kp LG(BSPC)
+&kp DQT   &kp Q     &kp W     &kp E         &kp R           &kp T                                  &kp Y      &kp U      &kp I      &kp O      &kp P      &trans
+&kp ESC   &kp A     &kp S     &kp D         &kp F           &kp G                                  &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp AT_SIGN
+&kp SQT   &kp Z     &kp X     &kp C         &kp V           &kp B          &sk LCMD     &sk LCTRL  &kp N      &kp M      &kp COMMA  &kp DOT    &kp MINUS  &kp RU_NUMERO
+                    &mo 5     &sk LEFT_ALT  &sk LEFT_SHIFT  &kp BACKSPACE  &kp ENTER    &layer_ru  &kp DOT    &kp SPACE  &to 6      &to 3
             >;
 
             display-name = "Base";
@@ -168,18 +173,18 @@
                 <&inc_dec_kp UP DOWN>,
                 <&inc_dec_kp LEFT RIGHT>,
                 <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>,
-                <&enc_vol>,
+                <&inc_dec_kp PAGE_DOWN PAGE_UP>,
                 <&inc_dec_kp DOWN UP>;
         };
 
         ru {
             display-name = "Ru";
             bindings = <
-&trans  &trans                   &trans                &trans              &trans              &trans                                   &trans              &trans                                                 &trans               &trans                 &trans               &trans
-&trans  &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                       &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                                    &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_HA
-&trans  &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                       &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                      &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&trans  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &trans    &trans     &kp RU_CYRILLIC_TE  &tap_hold RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &trans               &kp RU_NUMERO
-                                 &trans                &trans              &trans              &trans              &trans    &layer_en  &trans              &trans                                                 &to 7                &trans
+&en HASH  &kp RU_PLUS              &kp RU_SEMICOLON      &en GRAVE           &kp RU_COLON        &kp RU_EQUAL                             &kp RU_ASTERISK     &kp RU_EXCLAMATION                                     &kp RU_QUESTION      &kp RU_UNDER           &kp RU_SLASH         &trans
+&trans    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                       &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                                    &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_HA
+&trans    &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                       &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                      &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
+&trans    &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &trans    &trans     &kp RU_CYRILLIC_TE  &tap_hold RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &trans               &kp RU_NUMERO
+                                   &trans                &trans              &trans              &trans              &trans    &layer_en  &trans              &trans                                                 &to 7                &to 4
             >;
         };
 
@@ -220,11 +225,11 @@
 
         adj {
             bindings = <
-&layer_en  &trans  &trans  &trans  &trans  &trans                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
-&trans     &trans  &trans  &trans  &trans  &trans                    &trans        &trans        &trans            &trans        &trans        &studio_unlock
-&trans     &trans  &trans  &trans  &trans  &trans                    &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &trans        &trans
-&trans     &trans  &trans  &trans  &trans  &trans  &trans    &trans  &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &trans        &trans
-                   &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans            &trans
+&layer_en  &trans  &trans  &trans        &trans          &trans                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
+&trans     &trans  &trans  &mmv MOVE_UP  &mmv MOVE_DOWN  &trans                    &trans        &trans        &trans            &trans        &trans        &studio_unlock
+&trans     &trans  &trans  &trans        &trans          &trans                    &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &trans        &trans
+&trans     &trans  &trans  &trans        &trans          &trans  &trans    &trans  &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &trans        &trans
+                   &trans  &trans        &trans          &trans  &trans    &trans  &trans        &trans        &trans            &trans
             >;
 
             display-name = "Adjust";
