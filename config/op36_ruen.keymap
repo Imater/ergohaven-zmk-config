@@ -77,16 +77,29 @@
             layers = <1>;
         };
 
-        cmben {
-            bindings = <&layer_en>;
-            key-positions = <2 3>;
-            layers = <1>;
+        pass {
+            bindings = <&rgs_pass>;
+            key-positions = <6 7 8 9>;
         };
 
-        cmbru {
-            bindings = <&layer_ru>;
-            key-positions = <2 3>;
-            layers = <0>;
+        round_brackets {
+            bindings = <&pair_and_go_inside LPAR RPAR>;
+            key-positions = <13 11>;
+        };
+
+        curly_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACE RIGHT_BRACE>;
+            key-positions = <16 18>;
+        };
+
+        angle_brackets {
+            bindings = <&pair_and_go_inside LT GT>;
+            key-positions = <3 1>;
+        };
+
+        square_brackets {
+            bindings = <&pair_and_go_inside LEFT_BRACKET RIGHT_BRACKET>;
+            key-positions = <6 8>;
         };
     };
 
@@ -144,6 +157,20 @@
             wait-ms = <0>;
             tap-ms = <30>;
         };
+
+        pair_and_go_inside: pair_and_go_inside {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &kp LEFT>;
+            label = "PAIR_AND_GO_INSIDE";
+        };
+
+        rgs_pass: rgs_pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to_en &kp U &kp U &kp LS(S) &kp N4 &kp F &kp O &kp O &kp S &kp UNDER &kp LS(V) &kp LS(E) &kp R &kp G &kp S &kp N1>;
+            label = "RGS_PASS";
+        };
     };
 
     keymap {
@@ -153,7 +180,7 @@
             bindings = <
   &kp Q        &kp W        &kp E         &kp R         &kp T                                       &kp Y            &kp U         &kp I         &kp O        &kp P
   &hml LGUI A  &hml LALT S  &hml LSHFT D  &hml LCTRL F  &kp G                                       &kp H            &hmr RCTRL J  &hmr RSHFT K  &hmr LALT L  &hmr RGUI SEMICOLON
-  &kp Z        &kp X        &kp C         &kp V         &kp B                                       &kp N            &kp M         &kp COMMA     &kp DOT      &kp SQT
+  &kp Z        &kp X        &kp C         &kp V         &kp B                                       &kp N            &kp M         &kp COMMA     &kp DOT      &mt RU_DQT SQT
                                           &kp TAB       &red_mo_ru 4 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 2 0  &kp ENTER
             >;
 
@@ -164,7 +191,7 @@
             bindings = <
   &kp RU_CYRILLIC_SHORT_I   &kp RU_CYRILLIC_TSE         &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA        &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA     &kp RU_CYRILLIC_ZE
   &hml LGUI RU_CYRILLIC_EF  &hml LALT RU_CYRILLIC_YERU  &hml LSHFT RU_CYRILLIC_VE  &hml LCTRL RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &hmr RCTRL RU_CYRILLIC_O   &hmr RSHFT RU_CYRILLIC_EL  &hmr LALT RU_CYRILLIC_DE  &hmr RGUI RU_CYRILLIC_ZHE
-  &kp RU_CYRILLIC_YA        &kp RU_CYRILLIC_CHE         &kp RU_CYRILLIC_ES         &kp RU_CYRILLIC_EM        &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU        &kp RU_CYRILLIC_E
+  &kp RU_CYRILLIC_YA        &kp RU_CYRILLIC_CHE         &kp RU_CYRILLIC_ES         &kp RU_CYRILLIC_EM        &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU        &mt RU_DQT RU_CYRILLIC_E
                                                                                    &trans                    &red_mo_ru 4 0      &trans    &trans  &blue_mo_en 3 0     &trans
             >;
 
