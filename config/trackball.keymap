@@ -97,23 +97,30 @@
 &trackball { cpi = <1000>; };
 
 &trackball_listener {
-    input-processors = <&zip_xy_scaler 9 20>;
+    input-processors = 
+        <&zip_xy_transform 1>,
+        <&zip_xy_scaler 9 20>;
 
     scroller {
         layers = <1>;
         input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_transform 1>,
+            <&zip_xy_transform 2>,
             <&zip_xy_scaler 1 32>,
             <&zip_xy_to_scroll_mapper>;
     };
 
     sniper {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 1 4>;
+        input-processors = 
+            <&zip_xy_transform 1>,
+            <&zip_xy_scaler 1 4>;
     };
 
     adjust {
         layers = <3>;
-        input-processors = <&zip_xy_scaler 1 8>;
+        input-processors = 
+            <&zip_xy_transform 1>,
+            <&zip_xy_scaler 1 8>;
     };
 };
