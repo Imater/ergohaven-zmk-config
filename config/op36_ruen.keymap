@@ -103,6 +103,11 @@
             bindings = <&pair_and_go_inside LEFT_BRACKET RIGHT_BRACKET>;
             key-positions = <6 8>;
         };
+
+        remove_word_backspace {
+            bindings = <&kp LA(BACKSPACE)>;
+            key-positions = <32 31>;
+        };
     };
 
     macros {
@@ -182,7 +187,7 @@
             bindings = <
   &kp Q              &kp W         &kp E            &kp R        &kp T                                       &kp Y            &kp U        &kp I             &kp O         &kp P
   &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LCMD F  &kp G                                       &kp H            &hmr RCMD J  &hmr RIGHT_ALT K  &hmr RCTRL L  &hmr RIGHT_SHIFT SEMICOLON
-  &kp Z              &kp X         &kp C            &kp V        &kp B                                       &kp N            &kp M        &kp COMMA         &kp DOT       &mt RU_DQT SQT
+  &kp Z              &kp X         &kp C            &kp V        &kp B                                       &kp N            &kp M        &kp COMMA         &kp DOT       &kp FSLH
                                                     &kp TAB      &red_mo_ru 4 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 2 0  &lt 6 ENTER
             >;
 
@@ -193,7 +198,7 @@
             bindings = <
   &kp RU_CYRILLIC_SHORT_I         &kp RU_CYRILLIC_TSE          &kp RU_CYRILLIC_U             &kp RU_CYRILLIC_KA       &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA            &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE
   &hml LEFT_SHIFT RU_CYRILLIC_EF  &hml LCTRL RU_CYRILLIC_YERU  &hml LEFT_ALT RU_CYRILLIC_VE  &hml LCMD RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &hmr RCMD RU_CYRILLIC_O    &hmr RIGHT_ALT RU_CYRILLIC_EL  &hmr RCTRL RU_CYRILLIC_DE  &hmr RIGHT_SHIFT RU_CYRILLIC_ZHE
-  &kp RU_CYRILLIC_YA              &kp RU_CYRILLIC_CHE          &kp RU_CYRILLIC_ES            &kp RU_CYRILLIC_EM       &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE             &kp RU_CYRILLIC_YU         &mt RU_DQT RU_CYRILLIC_E
+  &kp RU_CYRILLIC_YA              &kp RU_CYRILLIC_CHE          &kp RU_CYRILLIC_ES            &kp RU_CYRILLIC_EM       &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE             &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E
                                                                                              &trans                   &red_mo_ru 4 0      &trans    &trans  &blue_mo_en 3 0     &lt 7 ENTER
             >;
 
@@ -202,10 +207,10 @@
 
         sym_en {
             bindings = <
-  &kp TILDE       &kp LT          &kp EQUAL         &kp GT           &kp GRAVE                    &kp CARET  &kp LBKT         &kp UNDER        &kp RBKT        &kp DLLR
+  &kp SINGLE_QUOTE      &kp LT           &kp EQUAL            &kp GT          &kp GRAVE                    &kp CARET  &kp LBKT        &kp UNDER            &kp RBKT         &kp DLLR
   &hml LEFT_SHIFT BSLH  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                     &kp PRCNT  &hmr RCMD LBRC  &hmr RIGHT_ALT SEMI  &hmr RCTRL RBRC  &hmr RIGHT_SHIFT EXCL
-  &kp HASH        &kp STAR        &kp COLON         &kp FSLH         &kp AMPS                     &kp AT     &kp PIPE         &kp COMMA        &kp DOT         &kp QMARK
-                                                    &trans           &mo 5      &trans    &trans  &none      &trans
+  &kp HASH              &kp STAR         &kp COLON            &kp FSLH        &kp AMPS                     &kp AT     &kp PIPE        &kp COMMA            &kp DOT          &kp QMARK
+                                                              &trans          &mo 5      &trans    &trans  &none      &trans
             >;
 
             display-name = "Symbols";
@@ -213,10 +218,10 @@
 
         sym_ru {
             bindings = <
-  &en TILDE               &en LT          &kp EQUAL         &en GT           &en GRAVE                    &en CARET  &en LBKT  &kp UNDER           &en RBKT    &en DLLR
+  &en SINGLE_QUOTE              &en LT           &kp EQUAL            &en GT          &en GRAVE                    &en CARET  &en LBKT  &kp UNDER          &en RBKT    &en DLLR
   &hml LEFT_SHIFT RU_BACKSLASH  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCMD RU_SEMI  &en RBRC    &hmr RIGHT_SHIFT EXCL
-  &en HASH                &kp STAR        &kp RU_COLON      &kp RU_FSLH      &en AMPS                     &en AT     &en PIPE  &kp RU_COMMA        &kp RU_DOT  &kp RU_QMARK
-                                                            &trans           &mo 5      &trans    &trans  &none      &trans
+  &en HASH                      &kp STAR         &kp RU_COLON         &kp RU_FSLH     &en AMPS                     &en AT     &en PIPE  &kp RU_COMMA       &kp RU_DOT  &kp RU_QMARK
+                                                                      &trans          &mo 5      &trans    &trans  &none      &trans
             >;
 
             display-name = "Symbols";
@@ -224,10 +229,10 @@
 
         nav {
             bindings = <
-  &kp N1         &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6    &kp N7         &kp N8       &kp N9     &kp N0
+  &kp N1               &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6    &kp N7         &kp N8       &kp N9     &kp N0
   &hml LEFT_SHIFT ESC  &kp LALT  &kp LSHFT  &kp LCTRL  &kp ENTER                     &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &hmr RIGHT_SHIFT END
-  &layer_en      &kp HOME  &kp INS    &kp END    &kp DELETE                    &kp CAPS  &kp PAGE_DOWN  &kp PAGE_UP  &trans     &layer_ru
-                                      &trans     &none       &trans    &trans  &mo 5     &trans
+  &layer_en            &kp HOME  &kp INS    &kp END    &kp DELETE                    &kp CAPS  &kp PAGE_DOWN  &kp PAGE_UP  &trans     &layer_ru
+                                            &trans     &none       &trans    &trans  &mo 5     &trans
             >;
 
             display-name = "Nav";
@@ -235,10 +240,10 @@
 
         adj {
             bindings = <
-  &kp F11        &kp F12         &kp F13         &kp F14         &kp F15                     &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_CLR
-  &hml LEFT_SHIFT F1  &hml LCTRL F2  &hml LEFT_ALT F3  &hml LCMD F4     &kp F5                     &out OUT_BLE  &hmr RCMD C_VOL_DN  &hmr RIGHT_ALT C_MUTE  &hmr RCTRL C_VOL_UP  &hmr RIGHT_SHIFT RGUI
-  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10                    &out OUT_USB  &kp C_PREV           &kp C_PP           &kp C_NEXT          &studio_unlock
-                                            &trans         &trans   &trans    &trans  &trans        &trans
+  &kp F11             &kp F12        &kp F13           &kp F14       &kp F15                    &bt BT_SEL 0  &bt BT_SEL 1        &bt BT_SEL 2           &bt BT_SEL 3         &bt BT_CLR
+  &hml LEFT_SHIFT F1  &hml LCTRL F2  &hml LEFT_ALT F3  &hml LCMD F4  &kp F5                     &out OUT_BLE  &hmr RCMD C_VOL_DN  &hmr RIGHT_ALT C_MUTE  &hmr RCTRL C_VOL_UP  &hmr RIGHT_SHIFT RGUI
+  &kp F6              &kp F7         &kp F8            &kp F9        &kp F10                    &out OUT_USB  &kp C_PREV          &kp C_PP               &kp C_NEXT           &studio_unlock
+                                                       &trans        &trans   &trans    &trans  &trans        &trans
             >;
 
             display-name = "Adjust";
@@ -247,9 +252,9 @@
         mouse_en {
             bindings = <
   &kp EQUAL  &kp FSLH  &kp STAR  &kp MINUS  &kp PLUS                    &trans  &trans    &trans     &trans    &trans
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &trans  &mkp MB1  &mkp RCLK  &mkp MB3  &trans
-  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0                    &trans  &trans    &trans     &trans    &trans
-                          &trans  &trans  &trans    &trans  &trans  &trans
+  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                      &trans  &mkp MB1  &mkp RCLK  &mkp MB3  &trans
+  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                      &trans  &trans    &trans     &trans    &trans
+                                 &trans     &trans    &trans    &trans  &trans  &trans
             >;
 
             display-name = "Mouse";
@@ -258,9 +263,9 @@
         mouse_ru {
             bindings = <
   &en EQUAL  &en FSLH  &en STAR  &en MINUS  &en PLUS                    &trans  &trans    &trans     &trans    &trans
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &trans  &mkp MB1  &mkp RCLK  &mkp MB3  &trans
-  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0                    &trans  &trans    &trans     &trans    &trans
-                          &trans  &trans  &trans    &trans  &trans  &trans
+  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                      &trans  &mkp MB1  &mkp RCLK  &mkp MB3  &trans
+  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                      &trans  &trans    &trans     &trans    &trans
+                                 &trans     &trans    &trans    &trans  &trans  &trans
             >;
 
             display-name = "Mouse";
