@@ -63,6 +63,16 @@
             quick-tap-ms = <200>;
             hold-while-undecided;
         };
+
+        sticky_hold: sticky_hold {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_HOLD";
+            bindings = <&mkp>;
+            #binding-cells = <1>;
+            release-after-ms = <10000000>;
+            quick-release;
+            ignore-modifiers;
+        };
     };
 
     combos {
@@ -83,31 +93,37 @@
         pass {
             bindings = <&rgs_pass>;
             key-positions = <6 7 8 9>;
+            layers = <1 0>;
         };
 
         round_brackets {
             bindings = <&pair_and_go_inside LPAR RPAR>;
             key-positions = <13 11>;
+            layers = <2 3>;
         };
 
         curly_brackets {
             bindings = <&pair_and_go_inside LEFT_BRACE RIGHT_BRACE>;
             key-positions = <16 18>;
+            layers = <2 3>;
         };
 
         angle_brackets {
             bindings = <&pair_and_go_inside LT GT>;
             key-positions = <3 1>;
+            layers = <2 3>;
         };
 
         square_brackets {
             bindings = <&pair_and_go_inside LEFT_BRACKET RIGHT_BRACKET>;
             key-positions = <6 8>;
+            layers = <2 3>;
         };
 
         remove_word_backspace {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <32 31>;
+            layers = <1 0>;
         };
     };
 
@@ -192,7 +208,7 @@
                                                     &kp TAB      &red_mo_ru 4 0  &kp BACKSPACE    &lt 8 SPACE  &blue_mo_en 2 0  &lt 6 ENTER
             >;
 
-            display-name = "Base";
+            display-name = "En";
         };
 
         ru {
@@ -232,7 +248,7 @@
             bindings = <
   &kp N1               &kp N2    &kp N3     &kp N4    &kp N5                        &kp N6    &kp N7         &kp N8       &kp N9     &kp N0
   &hml LEFT_SHIFT ESC  &kp LALT  &kp LSHFT  &kp LCMD  &kp ENTER                     &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &hmr RIGHT_SHIFT END
-  &layer_en            &kp HOME  &kp INS    &kp END   &kp DELETE                    &kp CAPS  &kp PAGE_DOWN  &kp PAGE_UP  &trans     &layer_ru
+  &layer_en            &kp HOME  &kp INS    &kp END   &kp DELETE                    &kp CAPS  &kp PAGE_DOWN  &kp PAGE_UP  &trans     &mo 4
                                             &trans    &none       &trans    &trans  &mo 5     &trans
             >;
 
@@ -274,9 +290,9 @@
 
         mouse {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans     &trans     &trans  &trans
-  &trans  &trans  &trans  &trans  &trans                    &trans  &mkp LCLK  &mkp RCLK  &trans  &to 8
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans     &trans     &trans  &trans
+  &trans  &trans  &trans  &trans  &trans                    &trans  &trans     &trans     &trans    &trans
+  &trans  &trans  &trans  &trans  &trans                    &trans  &mkp LCLK  &mkp RCLK  &mkp MB5  &sticky_hold MB5
+  &trans  &trans  &trans  &trans  &trans                    &trans  &trans     &trans     &trans    &mo 8
                           &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
