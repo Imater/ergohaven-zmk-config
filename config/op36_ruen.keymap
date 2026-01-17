@@ -9,6 +9,7 @@
 &mt {
     quick-tap-ms = <200>;
     flavor = "tap-preferred";
+    tapping-term-ms = <200>;
     require-prior-idle-ms = <125>;
     retro-tap;
 };
@@ -262,10 +263,10 @@
 
         mouse_ru {
             bindings = <
-  &en EQUAL  &en FSLH  &en STAR  &en MINUS  &en PLUS                    &trans  &trans    &trans     &trans    &trans
-  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                      &trans  &mkp MB1  &mkp RCLK  &mkp MB3  &trans
-  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                      &trans  &trans    &trans     &trans    &trans
-                                 &trans     &trans    &trans    &trans  &trans  &trans
+  &en EQUAL  &en FSLH  &en STAR  &en MINUS  &en PLUS                    &kp LA(LG(C))     &kp LG(H)                     &kp LC(LA(LG(F)))             &kp LA(LS(LG(C)))             &trans
+  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                      &kp LA(LG(LEFT))  &kp LA(LG(DOWN))              &kp LA(LG(UP_ARROW))          &kp LA(LG(RIGHT))             &trans
+  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                      &trans            &kp LS(LA(LC(LG(NUMBER_1))))  &kp LS(LA(LC(LG(NUMBER_2))))  &kp LS(LA(LC(LG(NUMBER_3))))  &kp LS(LA(LC(LG(N4))))
+                                 &trans     &trans    &trans    &trans  &trans            &trans
             >;
 
             display-name = "Mouse";
