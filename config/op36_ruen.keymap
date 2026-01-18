@@ -64,6 +64,14 @@
             hold-while-undecided;
         };
 
+        layer_lock_on: layer_lock_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "LAYER_LOCK_ON";
+            #binding-cells = <1>;
+            toggle-mode = "on";
+            locking;
+        };
+
         sticky_hold: sticky_hold {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_HOLD";
@@ -253,8 +261,8 @@
             bindings = <
   &kp ESC             &kp N2        &kp N3         &kp N4        &kp N5                           &kp RA(LEFT)  &kp RA(DOWN)   &kp RA(UP)   &kp RA(RIGHT)  &kp N0
   &hml LEFT_SHIFT N1  &hml LALT N2  &hml LSHFT N3  &hml LCMD N4  &kp NUMBER_5                     &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &hmr RIGHT_SHIFT END
-  &kp N6              &kp N7        &kp N8         &kp N9        &kp N0                           &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &to 4
-                                                   &trans        &none         &kp DEL    &trans  &mo 5         &trans
+  &kp N6              &kp N7        &kp N8         &kp N9        &kp N0                           &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &layer_lock_on 4
+                                                  &layer_en     &layer_ru     &kp DEL    &trans  &mo 5         &trans
             >;
 
             display-name = "Nav";
@@ -297,8 +305,8 @@
             bindings = <
   &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
   &trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &mkp MB5  &mkp MB2  &sticky_hold MB5
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &mkp MB4  &trans    &to 8
-                          &trans  &trans  &trans    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &mkp MB4  &trans    &layer_lock_on 8
+                         &layer_en  &layer_ru  &trans    &trans  &trans  &trans
             >;
 
             label = "mouse";
