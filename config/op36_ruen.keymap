@@ -236,10 +236,10 @@
 
         sym_en {
             bindings = <
-  &kp SINGLE_QUOTE      &kp LT           &kp EQUAL            &kp GT          &kp GRAVE                    &kp CARET  &kp LBKT        &kp UNDER            &kp RBKT         &kp DLLR
-  &hml LEFT_SHIFT STAR  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                     &kp PRCNT  &hmr RCMD LBRC  &hmr RIGHT_ALT SEMI  &hmr RCTRL RBRC  &hmr RIGHT_SHIFT EXCL
-  &kp HASH              &kp NUBS         &kp COLON            &kp FSLH        &kp AMPS                     &kp AT     &kp PIPE        &kp COMMA            &kp DOT          &kp QMARK
-                                                              &trans          &mo 5      &trans    &trans  &none      &trans
+  &kp SINGLE_QUOTE      &kp LT           &kp EQUAL            &kp GT          &kp GRAVE                               &kp CARET  &kp LBKT        &kp UNDER            &kp RBKT         &kp DLLR
+  &hml LEFT_SHIFT STAR  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                                &kp PRCNT  &hmr RCMD LBRC  &hmr RIGHT_ALT SEMI  &hmr RCTRL RBRC  &hmr RIGHT_SHIFT EXCL
+  &kp HASH              &kp NUBS         &kp COLON            &kp FSLH        &kp AMPS                                &kp AT     &kp PIPE        &kp COMMA            &kp DOT          &kp QMARK
+                                                              &trans          &mo 5      &trans    &kp DOUBLE_QUOTES  &none      &trans
             >;
 
             display-name = "Symbols";
@@ -247,10 +247,10 @@
 
         sym_ru {
             bindings = <
-  &en SINGLE_QUOTE             &en LT           &kp EQUAL            &en GT          &en GRAVE                    &en CARET  &en LBKT  &kp UNDER          &en RBKT    &en DLLR
-  &hml LEFT_SHIFT RU_ASTERISK  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCMD RU_SEMI  &en RBRC    &hmr RIGHT_SHIFT EXCL
-  &en HASH                     &kp BSLH         &kp RU_COLON         &kp RU_FSLH     &en AMPS                     &en AT     &en PIPE  &kp RU_COMMA       &kp RU_DOT  &kp RU_QMARK
-                                                                     &trans          &mo 5      &trans    &trans  &none      &trans
+  &en SINGLE_QUOTE             &en LT           &kp EQUAL            &en GT          &en GRAVE                                  &en CARET  &en LBKT  &kp UNDER          &en RBKT    &en DLLR
+  &hml LEFT_SHIFT RU_ASTERISK  &hml LCTRL LPAR  &hml LEFT_ALT MINUS  &hml LCMD RPAR  &kp PLUS                                   &kp PRCNT  &en LBRC  &hmr RCMD RU_SEMI  &en RBRC    &hmr RIGHT_SHIFT EXCL
+  &en HASH                     &en BSLH         &kp RU_COLON         &en RU_FSLH     &en AMPS                                   &en AT     &en PIPE  &kp RU_COMMA       &kp RU_DOT  &kp RU_QMARK
+                                                                     &trans          &mo 5      &trans    &kp RU_DOUBLE_QUOTES  &none      &trans
             >;
 
             display-name = "Symbols";
@@ -261,7 +261,7 @@
   &kp ESC             &kp N2        &kp N3         &kp N4        &kp N5                           &kp RA(LEFT)  &kp RA(DOWN)   &kp RA(UP)   &kp RA(RIGHT)  &kp N0
   &hml LEFT_SHIFT N1  &hml LALT N2  &hml LSHFT N3  &hml LCMD N4  &kp NUMBER_5                     &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &hmr RIGHT_SHIFT END
   &kp N6              &kp N7        &kp N8         &kp N9        &kp N0                           &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &layer_lock_on 4
-                                                  &layer_en     &layer_ru     &kp DEL    &trans  &mo 5         &trans
+                                                   &layer_en     &layer_ru     &kp DEL    &trans  &mo 5         &trans
             >;
 
             display-name = "Nav";
@@ -302,10 +302,10 @@
 
         mouse {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
-  &trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &mkp MB5  &mkp MB2  &sticky_hold MB5
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &mkp MB4  &trans    &layer_lock_on 8
-                         &layer_en  &layer_ru  &trans    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans     &trans                       &trans  &trans    &trans    &trans    &trans
+  &trans  &trans  &trans  &trans     &trans                       &trans  &mkp MB1  &mkp MB5  &mkp MB2  &sticky_hold MB5
+  &trans  &trans  &trans  &trans     &trans                       &trans  &trans    &mkp MB4  &trans    &layer_lock_on 8
+                          &layer_en  &layer_ru  &trans    &trans  &trans  &trans
             >;
 
             label = "mouse";
