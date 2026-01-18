@@ -69,7 +69,6 @@
             label = "LAYER_LOCK_ON";
             #binding-cells = <1>;
             toggle-mode = "on";
-            locking;
         };
 
         sticky_hold: sticky_hold {
