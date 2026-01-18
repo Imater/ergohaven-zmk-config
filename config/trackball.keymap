@@ -97,7 +97,7 @@
 
         scroll {
             bindings = <
-&mkp MB2  &mkp MB1
+&to 0  &to 0
             >;
 
             display-name = "Scroll";
