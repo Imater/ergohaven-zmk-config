@@ -43,12 +43,11 @@
         hold_sl_tap_mkp: hold_sl_tap_mkp {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_SL_TAP_MKP";
-            bindings = <&sl>, <&mkp>;
+            bindings = <&to>, <&mkp>;
 
             #binding-cells = <2>;
-            hold-while-undecided;
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            hold-while-undecided-linger;
         };
     };
 
