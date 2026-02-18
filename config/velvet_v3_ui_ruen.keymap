@@ -71,6 +71,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "RED_MO_RU";
             bindings = <&mo>, <&layer_ru>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -81,6 +82,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BLUE_MO_EN";
             bindings = <&mo>, <&layer_en>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -232,9 +234,9 @@
 
         en {
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E        &kp R        &kp T                              &kp Y  &kp U        &kp I        &kp O         &kp P                 &kp BSPC
-&kp TAB    &hml LSHFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G                              &kp H  &hmr RGUI J  &hmr RALT K  &hmr RCTRL L  &hmr RSHFT SEMICOLON  &kp ENTER
-&kp LSHFT  &kp Z         &kp X         &kp C        &kp V        &kp B                              &kp N  &kp M        &kp COMMA    &kp DOT       &kp SQT               &kp RSHFT
+&kp ESC    &kp Q         &kp W         &kp E        &kp R        &kp T                                       &kp Y            &kp U        &kp I        &kp O         &kp P                 &kp BSPC
+&kp TAB    &hml LSHFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G                                       &kp H            &hmr RGUI J  &hmr RALT K  &hmr RCTRL L  &hmr RSHFT SEMICOLON  &kp ENTER
+&kp LSHFT  &kp Z         &kp X         &kp C        &kp V        &kp B                                       &kp N            &kp M        &kp COMMA    &kp DOT       &kp SQT               &kp RSHFT
                          &mkp RCLK     &mo 7        &mkp MB1     &red_mo_ru 2 0  &kp BACKSPACE    &kp SPACE  &blue_mo_en 3 0  &trans       &kp LBKT     &kp RBKT
             >;
 
@@ -245,18 +247,18 @@
             display-name = "Ru";
             bindings = <
 &kp ESC    &kp RU_CYRILLIC_SHORT_I    &kp RU_CYRILLIC_TSE          &kp RU_CYRILLIC_U         &kp RU_CYRILLIC_KA       &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA       &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE          &kp BSPC
-&kp TAB    &hml LSHFT RU_CYRILLIC_EF  &hml LCTRL RU_CYRILLIC_YERU  &hml LALT RU_CYRILLIC_VE  &hml LGUI RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &hmr RGUI RU_CYRILLIC_O    &hmr RALT RU_CYRILLIC_EL  &hmr RCTRL RU_CYRILLIC_DE  &hmr RSHFT RU_CYRILLIC_ZHE  &kp BSLH
+&kp TAB    &hml LSHFT RU_CYRILLIC_EF  &hml LCTRL RU_CYRILLIC_YERU  &hml LALT RU_CYRILLIC_VE  &hml LGUI RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &hmr RGUI RU_CYRILLIC_O    &hmr RALT RU_CYRILLIC_EL  &hmr RCTRL RU_CYRILLIC_DE  &hmr RSHFT RU_CYRILLIC_ZHE  &trans
 &kp LSHFT  &kp RU_CYRILLIC_YA         &kp RU_CYRILLIC_CHE          &kp RU_CYRILLIC_ES        &kp RU_CYRILLIC_EM       &kp RU_CYRILLIC_I                     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE        &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E           &kp RSHFT
-                                      &trans                       &trans                    &trans                   &red_mo_ru 2 0       &trans    &trans  &blue_mo_en 4 0      &trans                     &kp RU_CYRILLIC_HA        &kp RU_CYRILLIC_HARD_SIGN
+                                      &trans                       &trans                    &trans                   &red_mo_ru 2 0      &trans    &trans  &blue_mo_en 4 0     &trans                     &kp RU_CYRILLIC_HA        &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
         nav {
             bindings = <
-&trans  &kp ESC             &kp N2        &kp N3         &kp N4        &kp N5                           &kp RA(LEFT)  &kp RA(DOWN)   &kp RA(UP)   &kp RA(RIGHT)  &kp N0            &trans
-&trans  &hml LSHFT N1       &hml LALT N2   &hml LSHFT N3  &hml LGUI N4   &kp NUMBER_5                     &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &hmr RSHFT END    &trans
-&trans  &kp N6              &kp N7        &kp N8         &kp N9        &kp N0                           &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &mo 5            &trans
-&trans  &layer_en           &layer_ru     &kp DEL        &trans        &mo 5                            &trans        &trans         &trans       &trans         &trans            &trans
+&trans  &kp ESC        &kp N2        &kp N3         &kp N4        &kp N5                          &kp RA(LEFT)  &kp RA(DOWN)   &kp RA(UP)   &kp RA(RIGHT)  &kp N0          &trans
+&trans  &hml LSHFT N1  &hml LALT N2  &hml LSHFT N3  &hml LGUI N4  &kp NUMBER_5                    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &hmr RSHFT END  &trans
+&trans  &kp N6         &kp N7        &kp N8         &kp N9        &kp N0                          &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &mo 5           &trans
+                       &trans        &layer_en      &trans        &trans        &trans    &trans  &mo 5         &trans         &trans       &trans
             >;
 
             display-name = "Nav";
@@ -264,10 +266,10 @@
 
         sym_en {
             bindings = <
-&trans  &kp SINGLE_QUOTE   &kp LT         &kp EQUAL        &kp GT          &kp GRAVE                           &kp CARET  &kp LBKT        &kp UNDER       &kp RBKT         &kp DLLR          &trans
-&trans  &hml LSHFT STAR    &hml LCTRL LPAR &hml LALT MINUS  &hml LGUI RPAR   &kp PLUS                            &kp PRCNT  &hmr RGUI LBRC  &hmr RALT SEMI  &hmr RCTRL RBRC  &hmr RSHFT EXCL   &kp QUESTION
-&trans  &kp HASH           &kp NUBS       &kp COLON        &kp FSLH        &kp AMPS                            &kp AT     &kp PIPE        &kp COMMA       &kp DOT          &kp QMARK         &trans
-&trans  &trans             &mo 5          &trans           &kp DOUBLE_QUOTES &none  &trans    &trans   &kp LBKT          &kp RBKT
+&trans  &kp SINGLE_QUOTE  &kp LT           &kp EQUAL        &kp GT          &kp GRAVE                               &kp CARET  &kp LBKT        &kp UNDER       &kp RBKT         &kp DLLR         &trans
+&trans  &hml LSHFT STAR   &hml LCTRL LPAR  &hml LALT MINUS  &hml LGUI RPAR  &kp PLUS                                &kp PRCNT  &hmr RGUI LBRC  &hmr RALT SEMI  &hmr RCTRL RBRC  &hmr RSHFT EXCL  &kp QUESTION
+&trans  &kp HASH          &kp NUBS         &kp COLON        &kp FSLH        &kp AMPS                                &kp AT     &kp PIPE        &kp COMMA       &kp DOT          &kp QMARK        &trans
+                          &trans           &trans           &trans          &mo 5      &kp DOUBLE_QUOTES    &trans  &trans     &trans          &kp LBKT        &kp RBKT
             >;
 
             display-name = "Symbols";
@@ -276,19 +278,19 @@
         sym_ru {
             display-name = "Symbols";
             bindings = <
-&kp RU_CYRILLIC_IO  &en SINGLE_QUOTE    &en LT           &kp EQUAL        &en GT          &en GRAVE                           &en CARET  &en LBKT  &kp UNDER          &en RBKT    &en DLLR          &trans
-&kp RU_NUMERO       &hml LSHFT RU_ASTERISK &hml LCTRL LPAR &hml LALT MINUS  &hml LGUI RPAR   &kp PLUS                            &kp PRCNT  &en LBRC  &hmr RGUI RU_SEMI  &en RBRC    &hmr RSHFT EXCL   &kp RU_QMARK
-&trans              &en HASH             &en BSLH         &kp RU_COLON     &en RU_FSLH     &en AMPS                            &en AT     &en PIPE  &kp RU_COMMA       &kp RU_DOT  &kp RU_QMARK      &trans
-&trans              &trans               &mo 5            &trans           &kp RU_DOUBLE_QUOTES &none  &trans    &trans   &en LBKT           &en RBKT
+&kp RU_CYRILLIC_IO  &en SINGLE_QUOTE        &en LT           &kp EQUAL        &en GT          &en GRAVE                                  &en CARET  &en LBKT  &kp UNDER          &en RBKT    &en DLLR         &trans
+&kp RU_NUMERO       &hml LSHFT RU_ASTERISK  &hml LCTRL LPAR  &hml LALT MINUS  &hml LGUI RPAR  &kp PLUS                                   &kp PRCNT  &en LBRC  &hmr RGUI RU_SEMI  &en RBRC    &hmr RSHFT EXCL  &kp RU_QMARK
+&trans              &en HASH                &en BSLH         &kp RU_COLON     &en RU_FSLH     &en AMPS                                   &en AT     &en PIPE  &kp RU_COMMA       &kp RU_DOT  &kp RU_QMARK     &trans
+                                            &trans           &trans           &trans          &mo 5      &kp RU_DOUBLE_QUOTES    &trans  &trans     &trans    &en LBKT           &en RBKT
             >;
         };
 
         adj {
             bindings = <
-&bootloader  &kp F11             &kp F12        &kp F13           &kp F14       &kp F15                    &bt BT_SEL 0  &bt BT_SEL 1        &bt BT_SEL 2      &bt BT_SEL 3         &bt BT_CLR     &bt BT_CLR
-&trans       &hml LSHFT F1       &hml LCTRL F2  &hml LALT F3      &hml LGUI F4  &kp F5                     &out OUT_BLE  &hmr RGUI C_VOL_DN  &hmr RALT C_MUTE  &hmr RCTRL C_VOL_UP  &kp RSHFT      &studio_unlock
-&none        &kp F6              &kp F7         &kp F8            &kp F9        &kp F10                    &out OUT_USB  &kp C_PREV          &kp C_PP          &kp C_NEXT           &studio_unlock &none
-&none        &none               &none          &none             &none         &none                     &none         &none               &none             &none               &none           &none
+&bootloader  &kp F11        &kp F12        &kp F13       &kp F14       &kp F15                  &bt BT_SEL 0  &bt BT_SEL 1        &bt BT_SEL 2      &bt BT_SEL 3         &bt BT_CLR      &bt BT_CLR
+&trans       &hml LSHFT F1  &hml LCTRL F2  &hml LALT F3  &hml LGUI F4  &kp F5                   &out OUT_BLE  &hmr RGUI C_VOL_DN  &hmr RALT C_MUTE  &hmr RCTRL C_VOL_UP  &kp RSHFT       &studio_unlock
+&none        &kp F6         &kp F7         &kp F8        &kp F9        &kp F10                  &out OUT_USB  &kp C_PREV          &kp C_PP          &kp C_NEXT           &studio_unlock  &none
+                            &none          &none         &none         &none    &none    &none  &none         &none               &none             &none
             >;
 
             display-name = "Adjust";
